@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class UIController : MonoBehaviour {
 
+	public Animator slidePanelWin;
+
 	public void PlayFastGameButton() {
 		SceneManager.LoadScene("FastGame");
 	}
@@ -14,6 +16,14 @@ public class UIController : MonoBehaviour {
 	public void ExitButton() {
 		SceneManager.LoadScene("Menu");
 	}
+
+
+	public void IsDone() {
+		slidePanelWin.enabled = true;
+		bool isHidden = slidePanelWin.GetBool("isHidden");
+		slidePanelWin.SetBool("isHidden", !isHidden);
+	}
+
 
 	void Start () {
 		
